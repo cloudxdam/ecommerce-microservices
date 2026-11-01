@@ -1,5 +1,6 @@
 # Java / Maven
 target/
+build/
 !.mvn/wrapper/maven-wrapper.jar
 
 # Environment / secrets
@@ -15,6 +16,13 @@ target/
 .idea/
 *.iml
 out/
+
+# Eclipse / VS Code
+.classpath
+.project
+.settings/
+bin/
+.vscode/
 
 # Angular
 node_modules/
