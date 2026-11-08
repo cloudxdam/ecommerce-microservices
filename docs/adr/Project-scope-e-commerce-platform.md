@@ -3,6 +3,7 @@
 ## Overview
 
 A distributed e-commerce platform built with Java, Spring Boot, Kafka, and Angular.
+Each customer company runs its own installation and administers that store; v1 is not a shared multi-tenant service.
 
 ## Functional Scope
 
@@ -12,7 +13,11 @@ A distributed e-commerce platform built with Java, Spring Boot, Kafka, and Angul
 - Role-based authorization.
 
 **Catalog**
-- Products and categories.
+- Products and categories configured by the store administrator.
+- Reusable, typed product specifications with normalized units.
+- Product images with ordering and a primary image.
+- EUR as the store's single base currency in v1.
+- Unit sales and estimated-weight pricing: customers order whole pieces, the server estimates weight from average weight per piece, and fixes the amount when the order is created.
 - Search, pagination, and filtering.
 - MongoDB.
 
@@ -45,7 +50,7 @@ The following are excluded from the initial scope:
 
 - Production payment processing and multiple payment providers.
 - Kubernetes; Docker Compose is sufficient for local development.
-- Multi-tenancy, internationalization, coupons, shipping, and logistics.
+- Shared multi-tenancy, multiple currencies, promotions/coupons, branch-level inventory, actual-weight repricing after preparation, shipping, and logistics.
 - Additional features or infrastructure without a clear engineering benefit.
 
 ## Engineering Principles
