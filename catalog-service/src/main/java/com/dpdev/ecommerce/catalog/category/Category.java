@@ -1,12 +1,12 @@
 package com.dpdev.ecommerce.catalog.category;
 
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.UUID;
 
+@Getter
 @Document("categories")
 public class Category {
     @Id
