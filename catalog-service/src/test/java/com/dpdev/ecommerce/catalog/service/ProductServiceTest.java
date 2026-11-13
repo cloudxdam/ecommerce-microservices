@@ -6,7 +6,6 @@ import com.dpdev.ecommerce.catalog.exception.ResourceNotFoundException;
 import com.dpdev.ecommerce.catalog.product.Price;
 import com.dpdev.ecommerce.catalog.product.PricingUnit;
 import com.dpdev.ecommerce.catalog.product.Product;
-import com.dpdev.ecommerce.catalog.product.SalesTerms;
 import com.dpdev.ecommerce.catalog.repository.CategoryRepository;
 import com.dpdev.ecommerce.catalog.repository.ProductRepository;
 import org.junit.jupiter.api.Test;
@@ -68,7 +67,7 @@ public class ProductServiceTest {
 
         when(productRepository.existsBySku(sku)).thenReturn(false);
         when(categoryRepository.findById(categoryId))
-                .thenReturn(Optional.of(new Category()));
+                .thenReturn(Optional.of(Category.create("laptops", "portable computers")));
         when(productRepository.save(any(Product.class)))
                 .thenAnswer(invocation -> invocation.getArgument(0));
 
