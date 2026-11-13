@@ -53,7 +53,7 @@ public class Category {
         return new Category(name, description);
     }
 
-    private String generateSlug(String name) {
+    private static String generateSlug(String name) {
 
         String slug =  Normalizer.normalize(name.trim(), Normalizer.Form.NFD).toLowerCase(Locale.ROOT)
                 .replaceAll("[^\\p{ASCII}]", "")
